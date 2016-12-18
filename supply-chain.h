@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 
+enum truckStatus {
+    DC,  // At Distribution Center
+    IT,  // In Transit
+    AS,  // Arrived at Store
+    DC	// Decommissioned
+};
+
 typedef struct item {
 
 	int ID;
@@ -23,7 +30,7 @@ typedef struct truck {
 	int ID;
 	char * licensePlate;
 	struct item ** shipment;
-	//status - enum? // where is the truck currently?
+	enum truckStatus status;
 	//destination - ? // where is the truck heading (at the moment)
 	
 } truck;
