@@ -43,6 +43,7 @@ truck ** listOfTrucks;
 item ** dcInventory;
 int totalTrucks;
 int trucksPerList;
+int truckID;
 int numProducts;
 
 void createDC();

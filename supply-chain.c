@@ -5,6 +5,7 @@
  	totalTrucks = 0;
  	numProducts = 0;
  	
+ 	truckID = 1;
  	trucksPerList = 10;
  	
  	//need to malloc dcInventory
@@ -29,11 +30,13 @@
  int addTruck(char * lp) {
  
  	truck * newTruck = malloc(sizeof(truck));
+ 	newTruck->ID = truckID;
  	newTruck->licensePlate = strdup(lp);
 	newTruck->status = DC;
 	
 	// need to add to listOfTrucks
 	listOfTrucks[totalTrucks] = newTruck;
+	truckID++;
 	totalTrucks++;
 	
  	return 0;
