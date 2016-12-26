@@ -13,5 +13,7 @@ Makefile uses the following compilers and flags:
 #Functions
 (Describe Functions here)
 
-#To Do:
-1. Possibly connect to a database system to access existing information 
+#Expansion Plans:
+1. Possibly connect to a database system to access existing information
+2. Create a Python Wrapper for real world usage (need to be able to call functions from outside of test case script)
+3. Create a GUI to improve User Friendliness (possibly still python)
