@@ -35,7 +35,7 @@ typedef struct truck {
 	
 } truck;
 
-//structs to define still: customer, trucks, distribution center
+//structs to define still: customer, distribution center
 
 // need some sort of data structure to act as a "product database"
 
@@ -50,6 +50,9 @@ void createDC();
 
 // Adds a truck to the DC's shipping fleet
 int addTruck(char * lp);
+int addToCargoList(item ** list, item * item, int quantity);
+int addShipment(int id, item ** shipment);
+int removeTruck(int id);
 
 // searches to see if the product in question already exists
 int searchFor(char * name);
@@ -63,4 +66,4 @@ int addItemByID(int id);
 int addItemByName(char * name, double MSRP);
 
 //move item from one location to another (e.g. distribution center to truck, truck to store, store to customer, etc.)
-int addItemTo();
+int addItemTo(item ** origin, item ** destination);

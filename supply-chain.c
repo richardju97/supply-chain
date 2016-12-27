@@ -16,6 +16,10 @@
  	}	
  }
  
+ int searchByID(int id) {
+ 	return 0;
+ }
+ 
  int addItemByName(char * name, double MSRP) {
  	
  	item *newItem = malloc(sizeof(item));
@@ -40,4 +44,45 @@
 	totalTrucks++;
 	
  	return 0;
+ }
+ 
+ int addToCargoList(item ** list, item * item, int quantity) {
+ 	
+ 	int i = 0;
+ 	while (list[i] != NULL) {
+ 		i++;
+ 	}
+ 	
+ 	list[i] = malloc(sizeof(item));
+ 	list[i]->ID = item->ID;
+ 	list[i]->name = strdup(item->name);
+ 	list[i]->quantity = quantity;
+ 	list[i]->MSRP = item->MSRP;
+ 	
+ 	return 0;
+ }
+ 
+ int addShipment(int id, item ** shipment) {
+ 	//need to search for truck by id first
+ 	//also need to make sure truck isnt decommissioned
+ 	
+ 	listOfTrucks[id]->shipment = shipment;
+ 	
+ 	return 0;
+ }
+ 
+ int removeTruck(int id) {
+	// need to first see if said truck exists/hasnt been decommissioned already
+	
+	int i = 0;
+	
+	while (listOfTrucks[i]->ID != id) {
+		i++;
+	}
+	
+	//currently just decommissions the truck - does not remove from database
+	//also does not remove from list of trucks either
+	listOfTrucks[i]->status = DE;
+	
+	return 0;
  }
