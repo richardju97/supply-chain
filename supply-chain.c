@@ -7,13 +7,18 @@
  	
  	truckID = 1;
  	trucksPerList = 10;
+ 	itemsPerList = 10;
  	
- 	//need to malloc dcInventory
  	listOfTrucks = malloc(sizeof(truck*)*trucksPerList);
  	int i;
  	for (i = 0; i < trucksPerList; i++) {
  		listOfTrucks[i] = NULL;
- 	}	
+ 	}
+ 	
+ 	dcInventory = malloc(sizeof(item*)*itemsPerList);
+ 	for (i = 0; i < itemsPerList; i++) {
+ 		dcInventory[i] = NULL;
+ 	}
  }
  
  int searchByID(int id) {
@@ -27,7 +32,10 @@
 	newItem->MSRP = MSRP;
  	 	
  	 // need to add to dcInventory
- 	 	
+ 	 // might need to change later
+ 	 dcInventory[numProducts] = newItem;
+ 	 numProducts++;
+ 	 
  	return 0;
  } 
  
@@ -57,7 +65,7 @@
  	list[i]->ID = item->ID;
  	list[i]->name = strdup(item->name);
  	list[i]->quantity = quantity;
- 	list[i]->MSRP = item->MSRP;
+ 	list[i]->MSRP = item->MSRP; 
  	
  	return 0;
  }
