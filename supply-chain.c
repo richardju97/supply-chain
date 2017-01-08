@@ -64,6 +64,7 @@
  	list[i] = malloc(sizeof(item));
  	list[i]->ID = item->ID;
  	list[i]->name = strdup(item->name);
+// 	strcpy(list[i]->name, item->name);
  	list[i]->quantity = quantity;
  	list[i]->MSRP = item->MSRP; 
  	
@@ -74,7 +75,8 @@
  	//need to search for truck by id first
  	//also need to make sure truck isnt decommissioned
  	
- 	listOfTrucks[id]->shipment = shipment;
+ 	//wrong implementation as the char * name wont copy over
+ 	listOfTrucks[id-1]->shipment = shipment;
  	
  	return 0;
  }
