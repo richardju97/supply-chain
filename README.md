@@ -6,6 +6,7 @@ Based on the Supply Chain Management section of Purdue University's MGMT 32300 I
 
 #Compiler Information
 Makefile uses the following compilers and flags:
+	gcc -Wall -Werror -g -o main main.c supply-chain.c
 
 #Usage
 (Describe Usage Here)
