@@ -76,7 +76,21 @@
  	//also need to make sure truck isnt decommissioned
  	
  	//wrong implementation as the char * name wont copy over
- 	listOfTrucks[id-1]->shipment = shipment;
+//  	listOfTrucks[id-1]->shipment = shipment;
+
+	int i = 0;
+	while (shipment[i] != NULL) {
+		
+		listOfTrucks[id-1]->shipment[i]->ID = shipment[i]->ID;
+// 		listOfTrucks[id-1]->shipment.id = shipment.id; use memcpy?
+		listOfTrucks[id-1]->shipment[i]->quantity = shipment[i]->quantity;
+		listOfTrucks[id-1]->shipment[i]->MSRP = shipment[i]->MSRP;
+		
+		
+		i++;
+	}
+	
+	
  	
  	return 0;
  }
