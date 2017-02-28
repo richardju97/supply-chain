@@ -85,8 +85,6 @@
 // 		listOfTrucks[id-1]->shipment.id = shipment.id; use memcpy?
 		listOfTrucks[id-1]->shipment[i]->quantity = shipment[i]->quantity;
 		listOfTrucks[id-1]->shipment[i]->MSRP = shipment[i]->MSRP;
-		
-		
 		i++;
 	}
 	
@@ -103,6 +101,11 @@
 	while (listOfTrucks[i]->ID != id) {
 		i++;
 	}
+	
+	if (i == totalTrucks)
+		return 1; //this truck doesnt exist inside the list of trucks (or has already been decommissioned)
+	
+// 	need to figure out difference between decommissioning trucks, trucks are sold/scrapped, or temporarily unavailable (out for repairs)
 	
 	//currently just decommissions the truck - does not remove from database
 	//also does not remove from list of trucks either
