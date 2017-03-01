@@ -84,6 +84,8 @@
 	if (id > totalTrucks)
 		return -1;
 
+// need boundary condition of truck is not available?
+
 	int i = 0;
 	while (shipment[i] != NULL) {
 		
