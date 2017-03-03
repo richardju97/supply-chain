@@ -55,6 +55,10 @@ int addToCargoList(item ** list, item * item, int quantity);
 int addShipment(int id, item ** shipment);
 int removeTruck(int id);
 
+// Operations on Trucks, preliminary listing
+int sendTruckToStore();
+int returnTruck();
+
 // searches to see if the product in question already exists
 int searchFor(char * name);
 
